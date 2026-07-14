@@ -1,0 +1,80 @@
+{
+  "name": "ai-sdk-layer",
+  "version": "0.1.0",
+  "description": "Layer on top of Vercel AI SDK that allows to build advanced agents",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./file_tools": {
+      "types": "./dist/file_tools/index.d.ts",
+      "import": "./dist/file_tools/index.js",
+      "default": "./dist/file_tools/index.js"
+    },
+    "./subagents": {
+      "types": "./dist/subagents/index.d.ts",
+      "import": "./dist/subagents/index.js",
+      "default": "./dist/subagents/index.js"
+    },
+    "./mcp": {
+      "types": "./dist/mcp/index.d.ts",
+      "import": "./dist/mcp/index.js",
+      "default": "./dist/mcp/index.js"
+    },
+    "./hooks": {
+      "types": "./dist/hooks/index.d.ts",
+      "import": "./dist/hooks/index.js",
+      "default": "./dist/hooks/index.js"
+    },
+    "./compaction": {
+      "types": "./dist/compaction/index.d.ts",
+      "import": "./dist/compaction/index.js",
+      "default": "./dist/compaction/index.js"
+    },
+    "./advisor": {
+      "types": "./dist/advisor/index.d.ts",
+      "import": "./dist/advisor/index.js",
+      "default": "./dist/advisor/index.js"
+    },
+    "./session_saving": {
+      "types": "./dist/session_saving/index.d.ts",
+      "import": "./dist/session_saving/index.js",
+      "default": "./dist/session_saving/index.js"
+    },
+    "./memory": {
+      "types": "./dist/memory/index.d.ts",
+      "import": "./dist/memory/index.js",
+      "default": "./dist/memory/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "ai": "^6.0.0",
+    "zod": "^3.23.0"
+  },
+  "peerDependencies": {
+    "bash-tool": "^1.0.0",
+    "just-bash": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  },
+  "keywords": [
+    "ai",
+    "vercel-ai-sdk",
+    "agents"
+  ],
+  "license": "MIT"
+}
