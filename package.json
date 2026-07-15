@@ -69,7 +69,8 @@
     "just-bash": "^1.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.5.0"
+    "typescript": "^5.5.0",
+    "vitest": "^4.1.10"
   },
   "keywords": [
     "ai",
