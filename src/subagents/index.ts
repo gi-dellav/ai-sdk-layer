@@ -1,16 +1,15 @@
-import type { Tool } from "ai";
-import { z } from "zod";
-
-export const subagentSchema = z.object({
-  // placeholder
-});
-
-export type SubagentOptions = z.infer<typeof subagentSchema>;
-
-export function subagent(options: SubagentOptions): Tool {
-  throw new Error("not implemented");
-}
-
-export function createSubagent(options: SubagentOptions): Tool {
-  throw new Error("not implemented");
-}
+export {
+  createTaskTool,
+  buildSystemPrompt,
+  truncateResponse,
+  combineResults,
+} from "./task_tool.js";
+export type { TaskToolOptions } from "./task_tool.js";
+export {
+  taskInputSchema,
+  subagentConfigSchema,
+  type TaskInput,
+  type SubagentConfig,
+  type SubagentResult,
+} from "./types.js";
+export { EXPLORE_PROMPT } from "./prompt.js";
