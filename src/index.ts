@@ -6,3 +6,7 @@ export * from "./compaction/index.js";
 export * from "./advisor/index.js";
 export * from "./session_saving/index.js";
 export * from "./memory/index.js";
+export * from "./skills/index.js";
+export * from "./slash_command/index.js";
+export * from "./permissions/index.js";
+export * from "./bash_tool/index.js";
