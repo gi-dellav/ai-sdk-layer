@@ -1,15 +1,23 @@
-import type { Tool } from "ai";
+import type { ToolSet } from "ai";
 import { z } from "zod";
+import { createEditTool } from "./edit_tool.js";
+import { createFindFilesTool } from "./find_files.js";
+import { createGrepTool } from "./grep_tool.js";
+import { createListDirTool } from "./list_dir.js";
+import { fileToolsOptionsSchema } from "./types.js";
 
-export type { CreateBashToolOptions, BashToolkit } from "bash-tool";
-export type { BashOptions } from "just-bash";
+export type { FileToolsOptions } from "./types.js";
+export { fileToolsOptionsSchema } from "./types.js";
 
-export const fileToolsSchema = z.object({
-  // placeholder
-});
+export function fileTools(
+  options?: z.infer<typeof fileToolsOptionsSchema>,
+): ToolSet {
+  const resolved = fileToolsOptionsSchema.parse(options ?? {});
 
-export type FileToolsOptions = z.infer<typeof fileToolsSchema>;
-
-export function fileTools(options?: FileToolsOptions): Tool {
-  throw new Error("not implemented");
+  return {
+    edit: createEditTool(resolved),
+    find_files: createFindFilesTool(resolved),
+    grep: createGrepTool(resolved),
+    list_dir: createListDirTool(resolved),
+  };
 }
